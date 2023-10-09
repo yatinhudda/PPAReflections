@@ -7,7 +7,7 @@ public class Client {
 
     public void start(Object o) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Class<?> c = o.getClass();
-        Method m = c.getMethod("process", String.class);
-        m.invoke(o, "101");
+        Method m = c.getMethod("process", new Class[]{String.class, String.class});
+        m.invoke(o, new Object[]{100, 101});
     }
 }
